@@ -1,25 +1,19 @@
-# NVIMRC
+# NeoConf
 
-## Set of configuration files for neovim
+## Configuration for neovim
 
-# Install:
 
-1. Run
-```
-ln -sf `pwd` ~/.config/nvim
-```
+## Installation
 
-from current directory
+1. On Windows
 
-2. Execute
+Run powershell script `.\install-windows.ps1`
 
-```
-nvim
+2. On Arch Linux
 
-:PackerSync
-```
+Run powershell script `.\install-arch-linux.sh`
 
-# TODO:
+## TODO:
 - eslint config detection for windows
 - lua_ls 'require' and 'vim'
 - fix angularls rename
