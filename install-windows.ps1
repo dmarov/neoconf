@@ -5,7 +5,7 @@
 # :echo stdpath('config')
 
 # needs to be performed as admin
-New-Item -Path "~/AppData/Local/nvim" -ItemType SymbolicLink -Value "~/repos/neovim-config"
+New-Item -Path "~/AppData/Local/nvim" -ItemType SymbolicLink -Value "~/repos/neoconf"
 
 # install Packer
 # :source .\lua\plugins-install.lua
