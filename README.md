@@ -11,7 +11,7 @@ Run powershell script `.\install-windows.ps1`
 
 2. On Arch Linux
 
-Run powershell script `.\install-arch-linux.sh`
+Run sh script `./install-arch-linux.sh`
 
 ## TODO:
 - eslint config detection for windows
