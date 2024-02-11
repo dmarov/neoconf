@@ -30,5 +30,6 @@ npm i -g typescript-language-server `
  emmet-ls `
  @fsouza/prettierd `
  @angular/language-server `
+ @angular/language-service `
  neovim `
  typescript
