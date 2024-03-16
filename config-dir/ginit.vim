@@ -1,5 +1,5 @@
-" Enable Mouse
-set mouse=a
+" Disable Mouse
+set mouse=
 
 " Set Editor Font
 if exists(':GuiFont')
