@@ -76,6 +76,7 @@ pip install neovim
 set variable
 ```
 LOCAL_NODE_PATH = %USERPROFILE%\bin\node-v20.11.1-win-x64
+LOCAL_NODE_MODULES_PATH = %USERPROFILE%\bin\node-v20.11.1-win-x64\node_modules
 ```
 
 1.22.

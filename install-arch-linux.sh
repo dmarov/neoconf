@@ -15,10 +15,13 @@ cp -a ./config-dir/. ~/.config/nvim/
 
 npm i -g typescript-language-server\
  vscode-langservers-extracted\
- stylelint-lsp yaml-language-server\
+ stylelint-lsp\
+ yaml-language-server\
  dockerfile-language-server-nodejs\
  emmet-ls\
  @fsouza/prettierd\
  @angular/language-server\
- neovim
-cd ~
+ @angular/language-service\
+ @angular/cli\
+ neovim\
+ typescript

@@ -106,13 +106,12 @@ lspconfig.clangd.setup {
   on_attach = custom_attach,
 }
 
-local node_path = os.getenv("LOCAL_NODE_PATH");
+local node_modules_path = os.getenv("LOCAL_NODE_MODULES_PATH");
 
-local project_library_path = node_path .. "/node_modules/"
 local cmd = {
-  node_path .. "/ngserver.cmd", "--stdio",
-  "--tsProbeLocations", project_library_path,
-  "--ngProbeLocations", project_library_path,
+  os.getenv("LOCAL_NODE_PATH") .. "/ngserver", "--stdio",
+  "--tsProbeLocations", node_modules_path,
+  "--ngProbeLocations", node_modules_path,
   "--forceStrictTemplates", "",
 }
 
