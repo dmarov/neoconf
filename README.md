@@ -9,11 +9,11 @@
 
     1.1. Install Latest Microsoft Visual C++
 
-    1.2. Create directory %USERPROFILE%\bin
+    1.2. Create directory `%USERPROFILE%\bin`
 
     1.3. Download neovim https://github.com/neovim/neovim/releases/tag/v0.9.5 (no installer)
 
-    1.4. Extract archive to %USERPROFILE%\bin
+    1.4. Extract archive to `%USERPROFILE%\bin`
 
     1.5. Add `%USERPROFILE%\bin` and `%USERPROFILE%\bin\nvim-win64` to PATH
 
@@ -31,12 +31,18 @@
     1.10. create registry entry
     ```
     HKEY_CURRENT_USER\Software\Classes\directory\Background\shell\nvim-qt\command
-    "%USERPROFILE%\bin\nvim-win64\bin\nvim-qt.exe"
+    ```
+    with value
+    ```
+    Default="%USERPROFILE%\bin\nvim-win64\bin\nvim-qt.exe"
     ```
 
     1.11. create registry entry
     ```
     Computer\HKEY_CURRENT_USER\Software\Classes\Directory\Background\shell\nvim-qt
+    ```
+    with value
+    ```
     Icon=""%USERPROFILE%\bin\nvim-qt.exe",0
     ```
 
@@ -45,10 +51,10 @@
     1.13. Install color theme
 
     ```
-    %USERPROFILE%\AppData\Local\nvim\autoload
+    %USERPROFILE%\AppData\Local\nvim\autoload\onedark.vim
     https://raw.githubusercontent.com/joshdick/onedark.vim/main/autoload/onedark.vim
 
-    %USERPROFILE%\AppData\Local\nvim\colors
+    %USERPROFILE%\AppData\Local\nvim\colors\onedark.vim
     https://raw.githubusercontent.com/joshdick/onedark.vim/main/colors/onedark.vim
     ```
 
@@ -56,7 +62,6 @@
     ```
     git clone https://github.com/wbthomason/packer.nvim "$env:LOCALAPPDATA\nvim-data\site\pack\packer\start\packer.nvim"
     ```
-
 
     1.15. Install packages inside neovim:
     ```
@@ -71,7 +76,7 @@
     pip install neovim
     ```
 
-    1.18. Install nodejs to PATH
+    1.18. Install nodejs https://nodejs.org/en/download to PATH
 
     set variable
     ```
@@ -81,7 +86,6 @@
 
     1.19.
     Install pt https://github.com/monochromegane/the_platinum_searcher
-
 
     1.20. Install nodejs packages
     ```
@@ -103,7 +107,33 @@
 
 2. On Arch Linux
 
-Run sh script `./install-arch-linux.sh`
+```
+pacman -Sy\
+ xclip\
+ neovim\
+ python\
+ python-pip\
+ ttf-hack\
+ lua-language-server
+
+sudo pip install neovim
+sudo pip install neovim-remote
+
+cp -a ./config-dir/. ~/.config/nvim/
+
+npm i -g typescript-language-server\
+ vscode-langservers-extracted\
+ stylelint-lsp\
+ yaml-language-server\
+ dockerfile-language-server-nodejs\
+ emmet-ls\
+ @fsouza/prettierd\
+ @angular/language-server\
+ @angular/language-service\
+ @angular/cli\
+ neovim\
+ typescript
+```
 
 ## TODO:
 - fix angularls rename
