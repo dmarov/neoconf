@@ -9,11 +9,9 @@
 
 1.1. Install Latest Microsoft Visual C++
 
-1.2. Download neovim-qt https://github.com/equalsraf/neovim-qt/releases (no installer)
-
 1.3. Create directory %USERPROFILE%\bin
 
-1.4. Download neovim https://github.com/neovim/neovim/releases (no installer)
+1.4. Download neovim https://github.com/neovim/neovim/releases/tag/v0.9.5 (no installer)
 
 1.5. Extract archive to %USERPROFILE%\bin
 
