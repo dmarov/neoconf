@@ -1,7 +1,7 @@
 local lspconfig = require('lspconfig')
 
 local map = function(type, key, value)
-  vim.api.nvim_buf_set_keymap(0,type,key,value,{noremap = true, silent = true});
+  vim.api.nvim_buf_set_keymap(0, type, key, value, { noremap = true, silent = true });
 end
 
 local capabilities = vim.lsp.protocol.make_client_capabilities()
@@ -37,9 +37,6 @@ lspconfig.tsserver.setup {
 lspconfig.eslint.setup{
   capabilities = capabilities,
   on_attach = custom_attach,
-  -- root_dir = function(fname)
-  --   return vim.loop.cwd()
-  -- end,
 }
 
 lspconfig.html.setup{
@@ -109,8 +106,6 @@ lspconfig.clangd.setup {
   on_attach = custom_attach,
 }
 
--- local project_library_path = "/home/md/.nvm/versions/node/v18.14.0/lib/node_modules/"
--- local project_library_path = "C:\\Program\\ Files\\nodejs\\node_modules\\"
 local node_path = os.getenv("LOCAL_NODE_PATH");
 
 local project_library_path = node_path .. "\\node_modules\\"

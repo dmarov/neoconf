@@ -17,8 +17,6 @@
 
 1.6. Add `%USERPROFILE%\bin` and `%USERPROFILE%\bin\nvim-win64` to PATH
 
-1.7. Create menu entry `Computer\HKEY_CURRENT_USER\Software\Classes\Directory\Background\shell\nvim-qt\command`
-
 1.8. Create directory `%USERPROFILE%\repos`
 
 1.9. Install git for Windows https://git-scm.com/download/win
@@ -27,12 +25,12 @@
 
 1.11. copy config dir to `:echo stdpath('config')` (`%LOCALAPPDATA%\nvim`)
 ```
-Copy-Item -Path ".\config-dir\*" -Destination "%LOCALAPPDATA%\nvim" -Recurse
+Copy-Item -Path ".\config-dir\*" -Destination "$env:LOCALAPPDATA\nvim" -Recurse
 ```
 
 1.12. create registry entry
 ```
-HKEY_CURRENT_USER\Software\Classes\directory\Background\shell
+HKEY_CURRENT_USER\Software\Classes\directory\Background\shell\nvim-qt\command
 "%USERPROFILE%\bin\nvim-win64\bin\nvim-qt.exe"
 ```
 
