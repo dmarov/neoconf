@@ -60,6 +60,8 @@ Install nodejs to PATH
 
 set variable LOCAL_NODE_PATH = %USERPROFILE%\bin\node-v20.11.1-win-x64
 
+Install pt https://github.com/monochromegane/the_platinum_searcher
+
 ```
 npm i -g typescript-language-server `
  vscode-langservers-extracted `
