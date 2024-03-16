@@ -49,6 +49,13 @@ git clone https://github.com/wbthomason/packer.nvim "$env:LOCALAPPDATA\nvim-data
 :source .\plugins-install.lua
 :PackerSync
 
+:checkhealth
+
+Install Python https://www.python.org/
+add python.exe to path
+
+pip install neovim
+
 #Run powershell script `.\install-windows.ps1`
 
 2. On Arch Linux

@@ -1,6 +1,5 @@
 " Enable Mouse
 set mouse=a
-let g:python3_host_prog="C:\\Python312\\python.exe"
 
 " Set Editor Font
 if exists(':GuiFont')
@@ -23,9 +22,3 @@ endif
 if exists(':GuiScrollBar')
     GuiScrollBar 0
 endif
-
-" Right Click Context Menu (Copy-Cut-Paste)
-nnoremap <silent><RightMouse> :call GuiShowContextMenu()<CR>
-inoremap <silent><RightMouse> <Esc>:call GuiShowContextMenu()<CR>
-xnoremap <silent><RightMouse> :call GuiShowContextMenu()<CR>gv
-snoremap <silent><RightMouse> <C-G>:call GuiShowContextMenu()<CR>gv
