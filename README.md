@@ -107,30 +107,38 @@
 
 2. On Arch Linux
 
-```
-pacman -Sy\
- xclip\
- neovim\
- python\
- python-pip\
- ttf-hack\
- lua-language-server
+    2.1. set environment variables
 
-sudo pip install neovim
-sudo pip install neovim-remote
+    ```
+    export LOCAL_NODE_PATH=~/.nvm/versions/node/v18.19.0/bin/
+    export LOCAL_NODE_MODULES_PATH=~/.nvm/versions/node/v18.19.0/lib/node_modules/
+    ```
 
-cp -a ./config-dir/. ~/.config/nvim/
+    2.2. install packages
+    ```
+    pacman -Sy\
+     xclip\
+     neovim\
+     python\
+     python-pip\
+     ttf-hack\
+     lua-language-server
 
-npm i -g typescript-language-server\
- vscode-langservers-extracted\
- stylelint-lsp\
- yaml-language-server\
- dockerfile-language-server-nodejs\
- emmet-ls\
- @fsouza/prettierd\
- @angular/language-server\
- @angular/language-service\
- @angular/cli\
- neovim\
- typescript
-```
+    sudo pip install neovim
+    sudo pip install neovim-remote
+
+    cp -a ./config-dir/. ~/.config/nvim/
+
+    npm i -g typescript-language-server\
+     vscode-langservers-extracted\
+     stylelint-lsp\
+     yaml-language-server\
+     dockerfile-language-server-nodejs\
+     emmet-ls\
+     @fsouza/prettierd\
+     @angular/language-server\
+     @angular/language-service\
+     @angular/cli\
+     neovim\
+     typescript
+    ```
