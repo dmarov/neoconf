@@ -132,3 +132,7 @@ vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(
     virtual_text = false
   }
 )
+
+vim.cmd [[
+  set fileformats=unix,dos
+]]
