@@ -44,7 +44,12 @@ https://raw.githubusercontent.com/joshdick/onedark.vim/main/autoload/onedark.vim
 %USERPROFILE%\AppData\Local\nvim\colors
 https://raw.githubusercontent.com/joshdick/onedark.vim/main/colors/onedark.vim
 
-Run powershell script `.\install-windows.ps1`
+git clone https://github.com/wbthomason/packer.nvim "$env:LOCALAPPDATA\nvim-data\site\pack\packer\start\packer.nvim"
+
+:source .\plugins-install.lua
+:PackerSync
+
+#Run powershell script `.\install-windows.ps1`
 
 2. On Arch Linux
 

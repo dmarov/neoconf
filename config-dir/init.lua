@@ -2,7 +2,7 @@ require('mappings')
 
 require('options')
 
-require('plugins-install')
+require('plugins')
 
 require('plugin-configs/nvim-tree')
 
