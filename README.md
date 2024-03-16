@@ -142,3 +142,5 @@
      neovim\
      typescript
     ```
+
+    2.3. Install lua-language-server https://github.com/LuaLS/lua-language-server/releases 
