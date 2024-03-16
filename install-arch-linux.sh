@@ -1,16 +1,4 @@
-# DEPRECATED
-
-#!/usr/bin/sh 
-
-# requirements
-# sudo pacman -S --needed \
-#     xclip \
-#     neovim \
-#     python3 \
-#     python-pip \
-#     python2-pip \
-#     ctags \
-#     ttf-hack
+#!/bin/sh 
 
 pacman -Sy\
  xclip\
@@ -23,7 +11,7 @@ pacman -Sy\
 sudo pip install neovim
 sudo pip install neovim-remote
 
-cp -r ./config-dir ~/.config/nvim
+cp -a ./config-dir/. ~/.config/nvim/
 
 npm i -g typescript-language-server\
  vscode-langservers-extracted\
@@ -31,5 +19,6 @@ npm i -g typescript-language-server\
  dockerfile-language-server-nodejs\
  emmet-ls\
  @fsouza/prettierd\
- @angular/language-server
+ @angular/language-server\
+ neovim
 cd ~
