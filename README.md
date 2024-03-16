@@ -17,17 +17,20 @@
 
 1.5. Extract archive to %USERPROFILE%\bin
 
-1.6. Add %USERPROFILE%\bin and %USERPROFILE%\bin\nvim-win64 to PATH
+1.6. Add `%USERPROFILE%\bin` and `%USERPROFILE%\bin\nvim-win64` to PATH
 
-1.7. Computer\HKEY_CURRENT_USER\Software\Classes\Directory\Background\shell\nvim-qt\command
+1.7. Create menu entry `Computer\HKEY_CURRENT_USER\Software\Classes\Directory\Background\shell\nvim-qt\command`
 
-1.8. Create directory %USERPROFILE%\repos
+1.8. Create directory `%USERPROFILE%\repos`
 
 1.9. Install git for Windows https://git-scm.com/download/win
 
-1.10. Clone repository git clone git@github.com:dmarov/neoconf.git
+1.10. Clone repository `git clone git@github.com:dmarov/neoconf.git`
 
 1.11. copy config dir to `:echo stdpath('config')` (`%LOCALAPPDATA%\nvim`)
+```
+Copy-Item -Path ".\config-dir\*" -Destination "%LOCALAPPDATA%\nvim" -Recurse
+```
 
 1.12. create registry entry
 ```
@@ -61,7 +64,7 @@ git clone https://github.com/wbthomason/packer.nvim "$env:LOCALAPPDATA\nvim-data
 
 1.18. Install packages inside neovim:
 ```
-:source .\plugins.lua
+:source .\lua\plugins.lua
 :PackerSync
 ```
 
