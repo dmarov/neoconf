@@ -56,6 +56,22 @@ add python.exe to path
 
 pip install neovim
 
+Install nodejs to PATH
+
+```
+npm i -g typescript-language-server `
+ vscode-langservers-extracted `
+ stylelint-lsp `
+ yaml-language-server `
+ dockerfile-language-server-nodejs `
+ emmet-ls `
+ @fsouza/prettierd `
+ @angular/language-server `
+ @angular/language-service `
+ neovim `
+ typescript
+```
+
 #Run powershell script `.\install-windows.ps1`
 
 2. On Arch Linux
