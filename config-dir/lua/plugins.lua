@@ -37,8 +37,6 @@ require('packer').startup(function(use)
   use 'godlygeek/tabular'
   -- unit test runner
   use 'vim-test/vim-test'
-  -- color theme
-  use 'joshdick/onedark.vim'
   -- syntax highlight and indentation
   use 'sheerun/vim-polyglot'
   -- editorconfig
