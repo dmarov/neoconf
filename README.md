@@ -58,6 +58,8 @@ pip install neovim
 
 Install nodejs to PATH
 
+set variable LOCAL_NODE_PATH = %USERPROFILE%\bin\node-v20.11.1-win-x64
+
 ```
 npm i -g typescript-language-server `
  vscode-langservers-extracted `
@@ -68,9 +70,13 @@ npm i -g typescript-language-server `
  @fsouza/prettierd `
  @angular/language-server `
  @angular/language-service `
+ @angular/cli `
  neovim `
  typescript
 ```
+
+Install lua-language-server
+
 
 #Run powershell script `.\install-windows.ps1`
 

@@ -111,9 +111,11 @@ lspconfig.clangd.setup {
 
 -- local project_library_path = "/home/md/.nvm/versions/node/v18.14.0/lib/node_modules/"
 -- local project_library_path = "C:\\Program\\ Files\\nodejs\\node_modules\\"
-local project_library_path = "C:\\ProgramData\\nvm\\v18.19.0\\node_modules\\"
+local node_path = os.getenv("LOCAL_NODE_PATH");
+
+local project_library_path = node_path .. "\\node_modules\\"
 local cmd = {
-  "C:\\ProgramData\\nvm\\v18.19.0\\ngserver.cmd", "--stdio",
+  node_path .. "\\ngserver.cmd", "--stdio",
   "--tsProbeLocations", project_library_path,
   "--ngProbeLocations", project_library_path,
   "--forceStrictTemplates", "",
