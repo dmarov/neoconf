@@ -23,7 +23,7 @@ pacman -Sy\
 sudo pip install neovim
 sudo pip install neovim-remote
 
-ln -sf `pwd` ~/.config/nvim
+cp -r ./config-dir ~/.config/nvim
 
 npm i -g typescript-language-server\
  vscode-langservers-extracted\
