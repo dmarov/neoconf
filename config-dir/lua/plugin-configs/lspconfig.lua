@@ -89,6 +89,9 @@ lspconfig.emmet_ls.setup {
 lspconfig.jsonls.setup {
   capabilities = capabilities,
   on_attach = custom_attach,
+  init_options = {
+    provideFormatter = false,
+  }
 }
 
 lspconfig.phpactor.setup {
