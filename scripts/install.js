@@ -1,20 +1,39 @@
-import { readdirSync, statSync, copyFileSync, mkdirSync, existsSync } from "fs";
+import {
+    readdirSync,
+    statSync,
+    copyFileSync,
+    mkdirSync,
+    existsSync,
+    rmSync,
+    readFileSync,
+} from "node:fs";
 import path from "path";
+import { attach, findNvim } from "neovim";
+import * as child_process from "node:child_process";
 
 class Installer {
+    static tmpFile = "./stdpath.tmp.txt";
+
     static fromDir = "./config-dir/";
 
     static toDir = "C:/Users/mds/AppData/local/nvim/";
 
     static start() {
+        this.findConfigDir();
+        return;
         const allFiles = this.getFilesRecursive(this.fromDir, []);
 
         allFiles.forEach((file) => {
-            if (file.match(/^(.*)\.tpl$/)) {
+            const oldFile = path.join(this.fromDir, file);
+            const newFile = path.join(this.toDir, file);
+            console.log(newFile);
+            return;
+
+            const template = file.match(/^(.*)\.tpl$/);
+
+            if (template !== null) {
                 // create from template
             } else {
-                const oldFile = path.join(this.fromDir, file);
-                const newFile = path.join(this.toDir, file);
                 this.ensureDirectoryExists(newFile);
                 copyFileSync(oldFile, newFile);
             }
@@ -55,6 +74,46 @@ class Installer {
 
         ensureDirectoryExists(dirname);
         mkdirSync(dirname);
+    }
+
+    async execute(cmd, cwd, params = []) {
+        return new Promise((res, rej) => {
+            const proc = spawn(cmd, params, {
+                cwd,
+                shell: true,
+            });
+
+            proc.stderr.setEncoding("utf-8");
+            proc.stdout.pipe(process.stdout);
+            proc.stderr.pipe(process.stderr);
+
+            proc.on("close", (code) => {
+                code == 0 ? res() : rej();
+            });
+        });
+    }
+
+    static findConfigDir() {
+        const found = findNvim();
+        const nvim_proc = child_process.spawn(
+            found.matches[0].path,
+            ["--clean", "--embed"],
+            {},
+        );
+
+        const nvim = attach({ proc: nvim_proc });
+
+        if (existsSync(this.tmpFile)) {
+            rmSync(this.tmpFile);
+        }
+
+        nvim.command(`redir > ${this.tmpFile} | echo stdpath('config')`);
+        nvim.quit();
+
+        setTimeout(() => {
+            const content = readFileSync(this.tmpFile, "utf-8");
+            console.log(content);
+        }, 10000);
     }
 }
 
