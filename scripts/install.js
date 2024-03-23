@@ -1,23 +1,61 @@
-import { readdirSync, statSync } from 'fs';
+import { readdirSync, statSync, copyFileSync, mkdirSync, existsSync } from "fs";
+import path from "path";
 
-const fromDir = './config-dir/';
+class Installer {
+    static fromDir = "./config-dir/";
 
-const toDir = 'C:/Users/mds/AppData/local/nvim/';
+    static toDir = "C:/Users/mds/AppData/local/nvim/";
 
-const getFilesRecursive = (dir, filelist) => {
-  const files = readdirSync(dir);
+    static start() {
+        const allFiles = this.getFilesRecursive(this.fromDir, []);
 
-  files.forEach((file) => {
-    if (statSync(`${dir}${file}`).isDirectory()) {
-      filelist = getFilesRecursive(`${dir}${file}/`, filelist);
-    } else {
-      filelist.push(`${dir}${file}`);
+        allFiles.forEach((file) => {
+            if (file.match(/^(.*)\.tpl$/)) {
+                // create from template
+            } else {
+                const oldFile = path.join(this.fromDir, file);
+                const newFile = path.join(this.toDir, file);
+                this.ensureDirectoryExists(newFile);
+                copyFileSync(oldFile, newFile);
+            }
+        });
     }
-  });
 
-  return filelist;
-};
+    static getFilesRecursive(dir, filelist) {
+        const files = readdirSync(dir);
 
-const res = getFilesRecursive(fromDir, []);
+        files.forEach((file) => {
+            if (statSync(`${dir}${file}`).isDirectory()) {
+                filelist = this.getFilesRecursive(`${dir}${file}/`, filelist);
+            } else {
+                const f = `${dir}${file}`;
 
-console.log(res);
+                const r = path.relative(this.fromDir, f);
+                filelist.push(r);
+            }
+        });
+
+        return filelist;
+    }
+
+    static templateToFile(src, dist, vars) {
+        const templateContent = fs.readFileSync(src, "utf-8");
+        const template = handlebars.compile(templateContent);
+        const res = template(vars);
+
+        fs.writeFileSync(dist, res);
+    }
+
+    static ensureDirectoryExists(filePath) {
+        const dirname = path.dirname(filePath);
+
+        if (existsSync(dirname)) {
+            return true;
+        }
+
+        ensureDirectoryExists(dirname);
+        mkdirSync(dirname);
+    }
+}
+
+Installer.start();

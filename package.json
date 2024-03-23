@@ -8,5 +8,8 @@
   },
   "author": "",
   "license": "ISC",
-  "type": "module"
+  "type": "module",
+  "dependencies": {
+    "handlebars": "^4.7.8"
+  }
 }

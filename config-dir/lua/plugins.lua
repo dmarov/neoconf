@@ -67,7 +67,7 @@ require('packer').startup(function(use)
   }
 
   use {
-    'MunifTanjim/prettier.nvim', 
+    'MunifTanjim/prettier.nvim',
     requires = {
       'nvimtools/none-ls.nvim',
       'nvim-lua/plenary.nvim',
