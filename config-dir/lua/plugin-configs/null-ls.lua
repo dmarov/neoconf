@@ -8,6 +8,7 @@ local denylist = {
   tsserver = true,
   stylelint_lsp = true,
   html = true,
+  cssls = true,
 }
 
 local denylist_by_filetype = {
