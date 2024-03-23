@@ -93,7 +93,7 @@ class Installer {
         });
     }
 
-    static findConfigDir() {
+    static async findConfigDir() {
         const found = findNvim();
         const nvim_proc = child_process.spawn(
             found.matches[0].path,
@@ -108,12 +108,20 @@ class Installer {
         }
 
         nvim.command(`redir > ${this.tmpFile} | echo stdpath('config')`);
-        nvim.quit();
 
+        if (nvim_proc.disconnect) {
+            nvim_proc.disconnect();
+        }
+
+        nvim.quit();
+        while (nvim_proc.exitCode === null) {
+            await new Promise((resolve) => setTimeout(resolve, 100));
+            console.log("waiting for Nvim (pid %d) to exit", nvim_proc.pid);
+        }
         setTimeout(() => {
             const content = readFileSync(this.tmpFile, "utf-8");
             console.log(content);
-        }, 10000);
+        }, 1000);
     }
 }
 
