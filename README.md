@@ -129,6 +129,7 @@
     sudo pip install neovim
     sudo pip install neovim-remote
 
+    node ./scripts/install ~/.config/nvim/
     cp -a ./config-dir/. ~/.config/nvim/
 
     npm i -g typescript-language-server\

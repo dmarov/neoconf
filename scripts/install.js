@@ -4,35 +4,32 @@ import {
     copyFileSync,
     mkdirSync,
     existsSync,
-    rmSync,
-    readFileSync,
 } from "node:fs";
 import path from "path";
-import { attach, findNvim } from "neovim";
-import * as child_process from "node:child_process";
+import { parse, stringify } from "yaml";
 
 class Installer {
     static tmpFile = "./stdpath.tmp.txt";
 
     static fromDir = "./config-dir/";
 
-    static toDir = "C:/Users/mds/AppData/local/nvim/";
+    static variablesFile = "./variables/";
 
-    static start() {
+    static start(toDir) {
+        const file = fs.readFileSync(this.variablesFile, "utf8");
+        const vars = parse(file);
+
         this.findConfigDir();
-        return;
         const allFiles = this.getFilesRecursive(this.fromDir, []);
 
         allFiles.forEach((file) => {
             const oldFile = path.join(this.fromDir, file);
-            const newFile = path.join(this.toDir, file);
-            console.log(newFile);
-            return;
+            const newFile = path.join(toDir, file);
 
             const template = file.match(/^(.*)\.tpl$/);
 
             if (template !== null) {
-                // create from template
+                this.templateToFile(oldFile, newFile, vars);
             } else {
                 this.ensureDirectoryExists(newFile);
                 copyFileSync(oldFile, newFile);
@@ -92,37 +89,6 @@ class Installer {
             });
         });
     }
-
-    static async findConfigDir() {
-        const found = findNvim();
-        const nvim_proc = child_process.spawn(
-            found.matches[0].path,
-            ["--clean", "--embed"],
-            {},
-        );
-
-        const nvim = attach({ proc: nvim_proc });
-
-        if (existsSync(this.tmpFile)) {
-            rmSync(this.tmpFile);
-        }
-
-        nvim.command(`redir > ${this.tmpFile} | echo stdpath('config')`);
-
-        if (nvim_proc.disconnect) {
-            nvim_proc.disconnect();
-        }
-
-        nvim.quit();
-        while (nvim_proc.exitCode === null) {
-            await new Promise((resolve) => setTimeout(resolve, 100));
-            console.log("waiting for Nvim (pid %d) to exit", nvim_proc.pid);
-        }
-        setTimeout(() => {
-            const content = readFileSync(this.tmpFile, "utf-8");
-            console.log(content);
-        }, 1000);
-    }
 }
 
-Installer.start();
+Installer.start(process.argv[2]);
