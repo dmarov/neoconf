@@ -6,7 +6,7 @@ import {
     existsSync,
 } from "node:fs";
 import path from "path";
-import { parse, stringify } from "yaml";
+import { parse } from "yaml";
 
 class Installer {
     static tmpFile = "./stdpath.tmp.txt";
