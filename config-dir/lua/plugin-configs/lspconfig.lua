@@ -160,3 +160,5 @@ lspconfig.lua_ls.setup {
     return true
   end,
 }
+
+lspconfig.nxls.setup{}

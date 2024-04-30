@@ -101,7 +101,9 @@
      @angular/language-service `
      @angular/cli `
      neovim `
-     typescript
+     typescript`
+     nxls`
+     core-js
     ```
 
     1.20. Install lua-language-server https://github.com/LuaLS/lua-language-server/releases
@@ -143,7 +145,9 @@
      @angular/language-service\
      @angular/cli\
      neovim\
-     typescript
+     typescript\
+     nxls\
+     core-js
     ```
 
     2.3. Install lua-language-server https://github.com/LuaLS/lua-language-server/releases
