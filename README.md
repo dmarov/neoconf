@@ -101,8 +101,8 @@
      @angular/language-service `
      @angular/cli `
      neovim `
-     typescript`
-     nxls`
+     typescript `
+     nxls `
      core-js
     ```
 
