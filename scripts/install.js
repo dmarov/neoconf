@@ -9,11 +9,9 @@ import path from "path";
 import { parse } from "yaml";
 
 class Installer {
-    static tmpFile = "./stdpath.tmp.txt";
-
     static fromDir = "./config-dir/";
 
-    static variablesFile = "./variables/";
+    static variablesFile = "./variables.yml";
 
     static start(toDir) {
         const file = fs.readFileSync(this.variablesFile, "utf8");
