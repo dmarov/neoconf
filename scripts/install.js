@@ -26,10 +26,11 @@ class Installer {
 
             const template = file.match(/^(.*)\.tpl$/);
 
+            this.ensureDirectoryExists(newFile);
+
             if (template !== null) {
                 this.templateToFile(oldFile, newFile, vars);
             } else {
-                this.ensureDirectoryExists(newFile);
                 copyFileSync(oldFile, newFile);
             }
         });
