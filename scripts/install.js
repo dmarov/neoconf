@@ -4,6 +4,7 @@ import {
     copyFileSync,
     mkdirSync,
     existsSync,
+    readFileSync,
 } from "node:fs";
 import path from "path";
 import { parse } from "yaml";
@@ -14,7 +15,7 @@ class Installer {
     static variablesFile = "./variables.yml";
 
     static start(toDir) {
-        const file = fs.readFileSync(this.variablesFile, "utf8");
+        const file = readFileSync(this.variablesFile, "utf8");
         const vars = parse(file);
 
         this.findConfigDir();
