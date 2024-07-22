@@ -18,7 +18,6 @@ class Installer {
         const file = readFileSync(this.variablesFile, "utf8");
         const vars = parse(file);
 
-        this.findConfigDir();
         const allFiles = this.getFilesRecursive(this.fromDir, []);
 
         allFiles.forEach((file) => {
