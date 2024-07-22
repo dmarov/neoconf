@@ -162,3 +162,5 @@ lspconfig.lua_ls.setup {
 }
 
 lspconfig.nxls.setup{}
+
+lspconfig.jdtls.setup{}
