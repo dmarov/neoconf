@@ -17,6 +17,7 @@ local denylist_by_filetype = {
   },
   markdown = {
     html = true,
+    ["null-ls"] = true,
   },
 }
 
