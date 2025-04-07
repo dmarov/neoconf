@@ -12,7 +12,10 @@ require('packer').startup(function(use)
   -- git
   use 'tpope/vim-fugitive'
   -- completion on Tab
-  use 'ervandew/supertab'
+  use {
+    'ervandew/supertab',
+    branch = 'main'
+  }
   -- simple code comments
   use 'tpope/vim-commentary'
   -- advanced code comments
