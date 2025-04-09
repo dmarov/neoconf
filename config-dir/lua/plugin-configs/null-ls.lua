@@ -5,7 +5,7 @@ local event = "BufWritePre" -- or "BufWritePost"
 local async = event == "BufWritePost"
 
 local denylist = {
-  tsserver = true,
+  ts_ls = true,
   stylelint_lsp = true,
   html = true,
   cssls = true,
