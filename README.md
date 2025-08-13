@@ -37,7 +37,7 @@
     with value
 
     ```
-    Default="%USERPROFILE%\bin\nvim-win64\bin\nvim-qt.exe"
+    Default="%USERPROFILE%\nvim-qt\bin\nvim-qt.exe""
     ```
 
     1.11. create registry entry
