@@ -10,11 +10,11 @@
 
     1.2. Create directory `%USERPROFILE%\bin`
 
-    1.3. Download neovim https://github.com/neovim/neovim/releases/tag/v0.9.5 (no installer)
+    1.3. Download neovim https://github.com/equalsraf/neovim-qt/releases/tag/v0.2.19 https://github.com/neovim/neovim/releases/tag/v0.11.3 (no installer)
 
-    1.4. Extract archive to `%USERPROFILE%\bin`
+    1.4. Extract archives to `%USERPROFILE%\bin`
 
-    1.5. Add `%USERPROFILE%\bin` and `%USERPROFILE%\bin\nvim-win64` to PATH
+    1.5. Add `%USERPROFILE%\bin`,`%USERPROFILE%\bin\nvim-win64` and `%USERPROFILE%\bin\neovim-qt` to PATH
 
     1.6. Create directory `%USERPROFILE%\repos`
 
@@ -103,7 +103,8 @@
      neovim `
      typescript `
      nxls `
-     core-js
+     core-js `
+     prettier
     ```
 
     1.20. Install lua-language-server https://github.com/LuaLS/lua-language-server/releases
@@ -147,7 +148,8 @@
      neovim\
      typescript\
      nxls\
-     core-js
+     core-js\
+     prettier
     ```
 
     2.3. Install lua-language-server https://github.com/LuaLS/lua-language-server/releases
