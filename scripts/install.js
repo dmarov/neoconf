@@ -5,6 +5,7 @@ import {
     mkdirSync,
     existsSync,
     readFileSync,
+    rmdirSync,
 } from "node:fs";
 import path from "path";
 import { parse } from "yaml";
@@ -15,6 +16,8 @@ class Installer {
     static variablesFile = "./variables.yml";
 
     static start(toDir) {
+        rmdirSync(toDir, { recursive: true, force: true });
+        mkdirSync(toDir);
         const file = readFileSync(this.variablesFile, "utf8");
         const vars = parse(file);
 

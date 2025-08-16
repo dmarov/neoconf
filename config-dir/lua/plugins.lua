@@ -1,60 +1,49 @@
 return {
   -- helper for html
-  'mattn/emmet-vim',
+  'dmarov/emmet-vim',
   -- custom status line
-  'vim-airline/vim-airline',
+  'dmarov/vim-airline',
   -- themes for custom status line
-  'vim-airline/vim-airline-themes',
+  'dmarov/vim-airline-themes',
   -- git
-  'tpope/vim-fugitive',
+  'dmarov/vim-fugitive',
   -- completion on Tab
-  'ervandew/supertab',
+  'dmarov/supertab',
   -- simple code comments
-  'tpope/vim-commentary',
+  'dmarov/vim-commentary',
   -- advanced code comments
-  'preservim/nerdcommenter',
+  'dmarov/nerdcommenter',
   -- multicursor
-  'mg979/vim-visual-multi',
+  'dmarov/vim-visual-multi',
   -- move selection with Alt
-  'matze/vim-move',
-  -- change brackets with cs"'
-  'tpope/vim-surround',
-  -- bookmarks with mm mi m...
-  'MattesGroeger/vim-bookmarks',
+  'dmarov/vim-move',
   -- auto qoutes, parenthesis, brackets close
-  'Raimondi/delimitMate',
+  'dmarov/delimitMate',
   -- hightlights html matching tag
-  'gregsexton/matchtag',
+  'dmarov/matchtag',
   -- full text search
-  'dyng/ctrlsf.vim',
+  'dmarov/ctrlsf.vim',
   -- marks line VCS status
-  'mhinz/vim-signify',
-  -- indentation
-  'godlygeek/tabular',
-  -- unit test runner
-  'vim-test/vim-test',
+  'dmarov/vim-signify',
   -- syntax highlight and indentation
-  'sheerun/vim-polyglot',
+  'dmarov/vim-polyglot',
   -- editorconfig
-  'editorconfig/editorconfig-vim',
+  'dmarov/editorconfig-vim',
   -- undo tree visualizer
-  'mbbill/undotree',
+  'dmarov/undotree',
   -- configs for nvim lsp client
-  'neovim/nvim-lspconfig',
-  -- formatter
-  'prettier/vim-prettier',
+  'dmarov/nvim-lspconfig',
   -- completion
-  'hrsh7th/cmp-nvim-lsp',
-  'hrsh7th/cmp-buffer',
-  'hrsh7th/cmp-path',
-  'hrsh7th/cmp-vsnip',
-  'hrsh7th/vim-vsnip',
-  'hrsh7th/nvim-cmp',
+  'dmarov/cmp-nvim-lsp',
+  'dmarov/cmp-buffer',
+  'dmarov/cmp-path',
+  'dmarov/cmp-vsnip',
+  'dmarov/vim-vsnip',
+  'dmarov/nvim-cmp',
   -- directory browser
-  'nvim-tree/nvim-web-devicons',
-  'nvim-tree/nvim-tree.lua',
-  'nvimtools/none-ls.nvim',
-  'nvim-lua/plenary.nvim',
-  'MunifTanjim/prettier.nvim',
-  'David-Kunz/gen.nvim',
+  'dmarov/nvim-web-devicons',
+  'dmarov/nvim-tree.lua',
+  'dmarov/none-ls.nvim',
+  'dmarov/plenary.nvim',
+  'dmarov/prettier.nvim',
 };
