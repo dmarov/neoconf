@@ -68,7 +68,7 @@ class Installer {
             return true;
         }
 
-        ensureDirectoryExists(dirname);
+        this.ensureDirectoryExists(dirname);
         mkdirSync(dirname);
     }
 

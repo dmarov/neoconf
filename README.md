@@ -4,7 +4,7 @@
 
 ## Installation
 
-1. On Windows from zero
+1. On Windows from scratch
 
     1.1. Install Latest Microsoft Visual C++
 

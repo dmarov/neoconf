@@ -2,6 +2,8 @@ require('mappings')
 
 require('options')
 
+require("config.lazy")
+
 require('plugins')
 
 require('plugin-configs/nvim-tree')

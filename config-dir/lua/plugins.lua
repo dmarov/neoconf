@@ -1,81 +1,67 @@
-vim.cmd [[packadd packer.nvim]]
-
-require('packer').startup(function(use)
-  -- packer itself
-  use 'wbthomason/packer.nvim'
+return {
   -- helper for html
-  use 'mattn/emmet-vim'
+  'mattn/emmet-vim',
   -- custom status line
-  use 'vim-airline/vim-airline'
+  'vim-airline/vim-airline',
   -- themes for custom status line
-  use 'vim-airline/vim-airline-themes'
+  'vim-airline/vim-airline-themes',
   -- git
-  use 'tpope/vim-fugitive'
+  'tpope/vim-fugitive',
   -- completion on Tab
-  use {
-    'ervandew/supertab',
-    branch = 'main'
-  }
+  'ervandew/supertab',
   -- simple code comments
-  use 'tpope/vim-commentary'
+  'tpope/vim-commentary',
   -- advanced code comments
-  use 'preservim/nerdcommenter'
+  'preservim/nerdcommenter',
   -- multicursor
-  use 'mg979/vim-visual-multi'
+  'mg979/vim-visual-multi',
   -- move selection with Alt
-  use 'matze/vim-move'
+  'matze/vim-move',
   -- change brackets with cs"'
-  use 'tpope/vim-surround'
+  'tpope/vim-surround',
   -- bookmarks with mm mi m...
-  use 'MattesGroeger/vim-bookmarks'
+  'MattesGroeger/vim-bookmarks',
   -- auto qoutes, parenthesis, brackets close
-  use 'Raimondi/delimitMate'
+  'Raimondi/delimitMate',
   -- hightlights html matching tag
-  use 'gregsexton/matchtag'
+  'gregsexton/matchtag',
   -- full text search
-  use 'dyng/ctrlsf.vim'
+  'dyng/ctrlsf.vim',
   -- marks line VCS status
-  use 'mhinz/vim-signify'
+  'mhinz/vim-signify',
   -- indentation
-  use 'godlygeek/tabular'
+  'godlygeek/tabular',
   -- unit test runner
-  use 'vim-test/vim-test'
+  'vim-test/vim-test',
   -- syntax highlight and indentation
-  use 'sheerun/vim-polyglot'
+  'sheerun/vim-polyglot',
   -- editorconfig
-  use 'editorconfig/editorconfig-vim'
+  'editorconfig/editorconfig-vim',
   -- undo tree visualizer
-  use 'mbbill/undotree'
+  'mbbill/undotree',
   -- configs for nvim lsp client
-  use 'neovim/nvim-lspconfig'
+  'neovim/nvim-lspconfig',
   -- formatter
-  use 'prettier/vim-prettier'
+  'prettier/vim-prettier',
   -- completion
-  use  {
+  'hrsh7th/cmp-nvim-lsp',
+  'hrsh7th/cmp-buffer',
+  'hrsh7th/cmp-path',
+  'hrsh7th/cmp-vsnip',
+  'hrsh7th/vim-vsnip',
+  {
     'hrsh7th/nvim-cmp',
-    requires = {
-      'hrsh7th/cmp-nvim-lsp',
-      'hrsh7th/cmp-buffer',
-      'hrsh7th/cmp-path',
-      'hrsh7th/cmp-vsnip',
-      'hrsh7th/vim-vsnip',
-    }
-  }
+  },
   -- directory browser
-  use {
+  'nvim-tree/nvim-web-devicons',
+  {
     'nvim-tree/nvim-tree.lua',
-    requires = {
-      'nvim-tree/nvim-web-devicons',
-    },
-  }
+  },
 
-  use {
+  'nvimtools/none-ls.nvim',
+  'nvim-lua/plenary.nvim',
+  {
     'MunifTanjim/prettier.nvim',
-    requires = {
-      'nvimtools/none-ls.nvim',
-      'nvim-lua/plenary.nvim',
-    },
-  }
-
-  use 'David-Kunz/gen.nvim'
-end)
+  },
+  'David-Kunz/gen.nvim',
+};
