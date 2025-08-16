@@ -25,6 +25,8 @@
     1.9. copy config dir to `:echo stdpath('config')` (`%LOCALAPPDATA%\nvim`)
 
     ```
+    node .\scripts\install.js C:\Users\mds\AppData\Local\nvim
+    or
     Copy-Item -Path ".\config-dir\*" -Destination "$env:LOCALAPPDATA\nvim" -Recurse
     ```
 
@@ -133,6 +135,7 @@
     sudo pip install neovim-remote
 
     node ./scripts/install ~/.config/nvim/
+    or
     cp -a ./config-dir/. ~/.config/nvim/
 
     npm i -g typescript-language-server\
