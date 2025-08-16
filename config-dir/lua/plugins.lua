@@ -49,19 +49,12 @@ return {
   'hrsh7th/cmp-path',
   'hrsh7th/cmp-vsnip',
   'hrsh7th/vim-vsnip',
-  {
-    'hrsh7th/nvim-cmp',
-  },
+  'hrsh7th/nvim-cmp',
   -- directory browser
   'nvim-tree/nvim-web-devicons',
-  {
-    'nvim-tree/nvim-tree.lua',
-  },
-
+  'nvim-tree/nvim-tree.lua',
   'nvimtools/none-ls.nvim',
   'nvim-lua/plenary.nvim',
-  {
-    'MunifTanjim/prettier.nvim',
-  },
+  'MunifTanjim/prettier.nvim',
   'David-Kunz/gen.nvim',
 };
