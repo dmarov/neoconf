@@ -25,7 +25,7 @@
     1.9. copy config dir to `:echo stdpath('config')` (`%LOCALAPPDATA%\nvim`)
 
     ```
-    node .\scripts\install.js C:\Users\mds\AppData\Local\nvim
+    node .\scripts\install.js C:\Users\{user}\AppData\Local\nvim
     or
     Copy-Item -Path ".\config-dir\*" -Destination "$env:LOCALAPPDATA\nvim" -Recurse
     ```
