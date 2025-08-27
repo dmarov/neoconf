@@ -10,7 +10,7 @@
 
     1.2. Create directory `%USERPROFILE%\bin`
 
-    1.3. Download neovim https://github.com/equalsraf/neovim-qt/releases/tag/v0.2.19 https://github.com/neovim/neovim/releases/tag/v0.11.3 (no installer)
+    1.3. Download neovim https://github.com/neovide/neovide/releases/tag/0.15.1 https://github.com/neovim/neovim/releases/tag/v0.11.3 (no installer)
 
     1.4. Extract archives to `%USERPROFILE%\bin`
 
@@ -33,25 +33,25 @@
     1.10. create registry entry
 
     ```
-    HKEY_CURRENT_USER\Software\Classes\directory\Background\shell\nvim-qt\command
+    HKEY_CURRENT_USER\Software\Classes\directory\Background\shell\neovim\command
     ```
 
     with value
 
     ```
-    Default="%USERPROFILE%\nvim-qt\bin\nvim-qt.exe""
+    Default="%USERPROFILE%\bin\neovide.exe""
     ```
 
     1.11. create registry entry
 
     ```
-    Computer\HKEY_CURRENT_USER\Software\Classes\Directory\Background\shell\nvim-qt
+    Computer\HKEY_CURRENT_USER\Software\Classes\Directory\Background\shell\neovim
     ```
 
     with value
 
     ```
-    Icon=""%USERPROFILE%\bin\nvim-qt.exe",0
+    Icon=""%USERPROFILE%\bin\neovide.exe",0
     ```
 
     1.12. Install font https://github.com/ryanoasis/nerd-fonts/releases/download/v3.1.1/Hack.zip
